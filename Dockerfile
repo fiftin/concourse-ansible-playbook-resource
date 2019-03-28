@@ -14,6 +14,8 @@ RUN set -eux; \
     pip install \
       ansible \
       setuptools \
+      boto3 \
+      botocore \
       boto; \
     mkdir -p /etc/ansible; \
     echo -e "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
