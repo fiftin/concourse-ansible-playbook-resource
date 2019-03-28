@@ -13,9 +13,13 @@ RUN set -eux; \
     rm -rf /var/lib/apt/lists/*; \
     pip install \
       ansible \
+      setuptools \
       boto; \
     mkdir -p /etc/ansible; \
     echo -e "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
+
+RUN git clone https://github.com/ansible/ansible /tmp/ansible
+RUN cd /tmp/ansible && python3 setup.py install
 
 COPY assets/ /opt/resource/
 
