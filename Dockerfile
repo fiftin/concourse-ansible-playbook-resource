@@ -21,7 +21,8 @@ RUN set -eux; \
     echo -e "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 
 RUN git clone https://github.com/ansible/ansible /tmp/ansible
-RUN cd /tmp/ansible && python setup.py install
+RUN mkdir -p /usr/share/ansible/plugins/lookup
+RUN cp /tmp/ansible/lib/ansible/plugins/lookup/aws_secret.py /usr/share/ansible/plugins/lookup
 
 COPY assets/ /opt/resource/
 
