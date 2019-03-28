@@ -19,7 +19,7 @@ RUN set -eux; \
     echo -e "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 
 RUN git clone https://github.com/ansible/ansible /tmp/ansible
-RUN cd /tmp/ansible && python3 setup.py install
+RUN cd /tmp/ansible && python setup.py install
 
 COPY assets/ /opt/resource/
 
