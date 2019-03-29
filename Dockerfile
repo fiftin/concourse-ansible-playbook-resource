@@ -20,9 +20,12 @@ RUN set -eux; \
     mkdir -p /etc/ansible; \
     echo -e "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 
+
 RUN git clone https://github.com/ansible/ansible /tmp/ansible
 RUN mkdir -p /usr/share/ansible/plugins/lookup
 RUN cp /tmp/ansible/lib/ansible/plugins/lookup/aws_secret.py /usr/share/ansible/plugins/lookup
+RUN mkdir -p /var/ansible
+RUN printf "[defaults]\nstdout_callback = yaml\nbin_ansible_callbacks = yes\n" > /etc/ansible/ansible.cfg
 
 COPY assets/ /opt/resource/
 
