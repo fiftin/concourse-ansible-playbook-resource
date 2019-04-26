@@ -1,5 +1,6 @@
 FROM ubuntu:bionic as main
 
+
 RUN set -eux; \
     apt-get update -y; \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
@@ -14,6 +15,7 @@ RUN set -eux; \
     pip install \
       ansible \
       setuptools \
+      PyMySQL \
       boto3 \
       botocore \
       boto; \
