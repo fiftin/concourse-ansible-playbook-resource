@@ -14,6 +14,7 @@ RUN set -eux; \
     pip install \
       ansible \
       setuptools \
+      MySQL-python \
       boto3 \
       botocore \
       boto; \
