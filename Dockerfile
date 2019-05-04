@@ -8,6 +8,7 @@ RUN set -eux; \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
       git \
       openssh-client \
+      mysql-client \
       python \
       python-pip \
       ruby \
