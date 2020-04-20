@@ -12,6 +12,7 @@ RUN set -eux; \
       python \
       python-pip \
       ruby \
+      default-jre \
       wget; \
     apt-get clean all; \
     rm -rf /var/lib/apt/lists/*; \
