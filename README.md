@@ -1,6 +1,6 @@
 # Concourse Ansible 2.8 Playbook Resource
 
-A [Concourse CI](https://concourse-ci.org) resource for running Ansible playbooks.
+A [Concourse CI](https://concourse-ci.org) resource for running Ansible playbooks. Includes Java.
 
 ## Source Configuration
 
